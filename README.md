@@ -90,19 +90,19 @@ O objetivo desenvolver um controle de Pets e Donos.
 **Pefixo**: https://5f779702d5c9cb001623760a.mockapi.io/api/v1
 
 ### Donos
-**Get:** /owner
-**Get ID:** /owner/{id}
-**Get Pets:** /owner/{idOwner}/pets
-**Post:** /owner/{id}
-**Put:** /owner/{id}
-**Delete:** /owner/{id}
+- **Get:** /owner
+- **Get ID:** /owner/{id}
+- **Get Pets:** /owner/{idOwner}/pets
+- **Post:** /owner/{id}
+- **Put:** /owner/{id}
+- **Delete:** /owner/{id}
 
 ### Pets
-**Get:** /pets
-**Get ID:** /pets/{id}
-**Post:** /pets/{id}
-**Put:** /pets/{id}
-**Delete:** /pets/{id}
+- **Get:** /pets
+- **Get ID:** /pets/{id}
+- **Post:** /pets/{id}
+- **Put:** /pets/{id}
+- **Delete:** /pets/{id}
 
 #
 
