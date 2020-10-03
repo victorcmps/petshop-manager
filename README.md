@@ -43,8 +43,8 @@ O objetivo desenvolver um controle de Pets e Donos.
 - O sistema deverá apresentar todos os pets cadastrados. Os campos apresentados serão:
 	1. Nome;
 	2. Apelido;
-	3. Espécie;
-	4. Tipo (Macho/Fêmea)
+	3. Raça;
+	4. Especíe:
 	5. Nome do Dono;
 	6. Telefone do Dono;
 
