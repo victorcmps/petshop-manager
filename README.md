@@ -28,7 +28,7 @@ _Obs: Caso não tenha recebido permissão para realizar o push da branch entre e
 
 ## Objetivo
 
-O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
+O objetivo desenvolver um controle de Pets e Donos.
 
 ## Telas
 
@@ -41,18 +41,18 @@ O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
 ### Pets
 
 - O sistema deverá apresentar todos os pets cadastrados. Os campos apresentados serão:
-1. Nome;
-2. Apelido;
-3. Espécie;
-4. Tipo (Macho/Fêmea)
-5. Nome do Dono;
-6. Telefone do Dono;
+	1. Nome;
+	2. Apelido;
+	3. Espécie;
+	4. Tipo (Macho/Fêmea)
+	5. Nome do Dono;
+	6. Telefone do Dono;
 
-- As seguintes ações poderão ser realizadas:
-1. Incluir um novo Pet;
-2. Alterar um Pet existente;
-3. Excluir um Pet existente;
-3. Visualizar Dados do Pet;
+- Ações Disponíveis:
+	1. Incluir um novo Pet;
+	2. Alterar um Pet existente;
+	3. Excluir um Pet existente;
+	4. Visualizar Dados do Pet;
 
 #### CRUD-Pets
 - Todos os campos deverão ser preenchidos;
@@ -66,15 +66,15 @@ O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
 ### Donos
 
 - O sistema deverá apresentar todos os donos de pet cadastrados. Os campos apresentados serão:
-1. Nome;
-2. E-mail;
-3. Telefone;
+	1. Nome;
+	2. E-mail;
+	3. Telefone;
 
-- As seguintes ações poderão ser realizadas:
-1. Incluir um novo dono;
-2. Alterar um dono existente;
-3. Excluir um dono existente;
-3. Visualizar Dados do dono;
+- Ações Disponíveis:
+	1. Incluir um novo dono;
+	2. Alterar um dono existente;
+	3. Excluir um dono existente;
+	4. Visualizar Dados do dono;
 
 #### CRUD-Dono
 - Todos os campos deverão ser preenchidos;
@@ -88,7 +88,8 @@ O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
 ## APIs
 
 **Pefixo**: https://5f779702d5c9cb001623760a.mockapi.io/api/v1
-###Donos
+
+### Donos
 **Get:** /owner
 **Get ID:** /owner/{id}
 **Get Pets:** /owner/{idOwner}/pets
@@ -96,7 +97,7 @@ O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
 **Put:** /owner/{id}
 **Delete:** /owner/{id}
 
-###Pets
+### Pets
 **Get:** /pets
 **Get ID:** /pets/{id}
 **Post:** /pets/{id}
@@ -117,4 +118,4 @@ O objetivo desenvolver um CRUD para o cadastro e manutenção de Pets.
 
 Caso tenha alguma sugestão de melhoria, nos avise!
 
-Mais uma vez, boa sorte! :blue_heart:
+Boa sorte! :blue_heart:
