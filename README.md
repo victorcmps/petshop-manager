@@ -79,7 +79,6 @@ O objetivo desenvolver um controle de Pets e Donos.
 #### CRUD-Dono
 - Todos os campos deverão ser preenchidos;
 - Para alterções/deleções, o usuário precisará confirmar a operação;
-- As Raças e Especíes deverão ser campos do tipo compo, com informações já definidas;
 
 #### Visualizar Pets
 - O sistema deverá apresentar todos os dados do seu dono e de todos os seus pets;
