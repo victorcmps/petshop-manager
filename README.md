@@ -1,4 +1,4 @@
-# Desafio Frontend a Backoffice 2020
+# Desafio Frontend Backoffice Protheus 2020
 
 Olá! Seja bem vindo! Muito obrigado por querer fazer parte do nosso time! 
 
