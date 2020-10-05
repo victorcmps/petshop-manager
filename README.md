@@ -32,12 +32,6 @@ O objetivo desenvolver um controle de Pets e Donos.
 
 ## Telas
 
-### Login
-
-- Desenvolver uma tela de login de usuários.
-- A regra de autenticação fica por conta do desenvolvedor (inclusive um usuário e senha mockado no sistema);
-- Essa deverá ser a única tela que o usuário conseguirá acessar sem realizar o login;
-
 ### Pets
 
 - O sistema deverá apresentar todos os pets cadastrados. Os campos apresentados serão:
@@ -48,13 +42,9 @@ O objetivo desenvolver um controle de Pets e Donos.
 	5. Nome do Dono;
 	6. Telefone do Dono;
 
-- Ações Disponíveis:
-	1. Incluir um novo Pet;
-	2. Alterar um Pet existente;
-	3. Excluir um Pet existente;
-	4. Visualizar Dados do Pet;
+- *Ações Disponíveis:* Possibilitar a manutenção de cadastros existentes e inclusão de novos registros;
 
-#### CRUD-Pets
+#### Regras-Pets
 - Todos os campos deverão ser preenchidos;
 - O Pet deverá ser vinculado a um dono;
 - Para alterções/deleções, o usuário precisará confirmar a operação;
@@ -70,13 +60,9 @@ O objetivo desenvolver um controle de Pets e Donos.
 	2. E-mail;
 	3. Telefone;
 
-- Ações Disponíveis:
-	1. Incluir um novo dono;
-	2. Alterar um dono existente;
-	3. Excluir um dono existente;
-	4. Visualizar Dados do dono;
+- *Ações Disponíveis:* Possibilitar a manutenção de cadastros existentes e inclusão de novos registros;
 
-#### CRUD-Dono
+#### Regras-Dono
 - Todos os campos deverão ser preenchidos;
 - Para alterções/deleções, o usuário precisará confirmar a operação;
 
@@ -106,6 +92,7 @@ O objetivo desenvolver um controle de Pets e Donos.
 #
 
 ## Diferenciais
+- Criar um processo de autenticação;
 - Design Responsivo;
 - Validação de formulários e máscaras;
 - Simular paginação e pesquisas;
