@@ -1,18 +1,24 @@
+@mixin transition {
+	-webkit-transition: all 0.10s ease-in-out;
+	-moz-transition: all 0.10s ease-in-out;
+	-ms-transition: all 0.10s ease-in-out;
+	-o-transition: all 0.10s ease-in-out;
+}
+
+$first-color: #F6D48B;
+
 .login {
 	width: 100%;
 	height: 100vh;
 	background: #fff;
-	overflow: hidden;
 	display: flex;
-	align-items: stretch;
 	
 	&__logo {
 		width: calc(100% - 800px);
-    background-position: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: #F6D48B;
+		background: $first-color;
 		background-image: url(../../../assets/images/pets.png);
 		background-repeat: no-repeat;
 		background-position: center;
@@ -26,7 +32,7 @@
 
 		&--button {
 			display: block;
-			background: #F6D48B;
+			background: $first-color;
 			border: 0;
 			padding: 15px 30px;
 			border-radius: 5px;
@@ -35,6 +41,12 @@
 			margin-top: 15px;
 			font-family: 'Source Sans Pro';
 			box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 10%);
+			cursor: pointer;
+			@include transition();
+
+			&:hover {
+				background: darken($first-color, 5%);
+			}
 		}
 
 		&--error {
@@ -54,6 +66,13 @@
 			border-radius: 5px;
 			font-family: 'Source Sans Pro';
 			box-sizing: border-box;
+			@include transition();
+
+			&:focus {
+				outline: none;
+				box-shadow: 0 0 5px $first-color;
+				border: 1px solid $first-color;
+			}
 		}
 	}
 }
