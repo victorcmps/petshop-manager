@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiDomainInterceptor } from './providers/api-domain-interceptor';
-import { HomeComponent } from './pages/home/home.component';
+import { PetsComponent } from './pages/pets/pets.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { LoadingInterceptor } from '../app/providers/loading-interceptor'
 
@@ -15,7 +15,7 @@ import { LoadingInterceptor } from '../app/providers/loading-interceptor'
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    PetsComponent,
     LoadingComponent
   ],
   imports: [
