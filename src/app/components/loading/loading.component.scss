@@ -1,11 +1,11 @@
-$first-color: #F6D48B;
+$first-color: #11bd6a;
 
 .backdrop {
 	background: rgba(0, 0, 0, 0.2);
 	z-index: 1;
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: fixed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
