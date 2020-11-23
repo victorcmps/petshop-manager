@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.owner.getOwners().subscribe(owners => {
       const user = this.auth.login(owners, this.loginForm.get('email').value);
-      user ? this.router.navigate(['/pets']) : this.errorMessage = '*Usuário ou senha incorreta';
+      user ? this.router.navigate(['/dashboard']) : this.errorMessage = '*Usuário ou senha incorreta';
     })
   }
 

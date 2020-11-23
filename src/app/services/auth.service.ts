@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import Owner from '../models/owner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  private logged = new Subject<boolean>();
+  logged$ = this.logged.asObservable();
 
   constructor() { }
 
@@ -21,5 +25,9 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
+  }
+
+  loginStatus(status) {
+    this.logged.next(status);
   }
 }

@@ -5,7 +5,7 @@
 	-o-transition: all 0.10s ease-in-out;
 }
 
-$first-color: #F6D48B;
+$first-color: #11bd6a;
 
 .login {
 	width: 100%;
@@ -42,7 +42,13 @@ $first-color: #F6D48B;
 			font-family: 'Source Sans Pro';
 			box-shadow: 0px 2px 6px 0px rgb(0 0 0 / 10%);
 			cursor: pointer;
+			color: white;
 			@include transition();
+
+			&:disabled {
+				background-color: #0f9a57;
+				color: #084628;
+			}
 
 			&:hover {
 				background: darken($first-color, 5%);
