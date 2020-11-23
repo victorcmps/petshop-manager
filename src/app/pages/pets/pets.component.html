@@ -1,1 +1,70 @@
-<p>pets works!</p>
+<body class="container">
+	<h1>Pets</h1>
+	<table class="form">
+		<thead>
+			<th>Nome</th>
+			<th>Apelido</th>
+			<th>Raça</th>
+			<th>Especíe</th>
+			<th>Nome do Dono</th>
+			<th>Telefone do Dono</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let pet of pets$ | async">
+				<ng-container *ngTemplateOutlet="idEdit === pet.id ? edit : displayTable; context: {$implicit: pet}">
+				</ng-container>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+<ng-template #edit let-pet>
+	<ng-container [formGroup]="form">
+		<td><input type="text" formControlName="name"></td>
+		<td><input type="text" formControlName="nickName"></td>
+		<td>
+			<select formControlName="breed">
+				<option [value]="breed" *ngFor="let breed of comboBreed">
+					{{breed}}
+				</option>
+			</select>
+		</td>
+		<td>
+			<select formControlName="species">
+				<option [value]="specie.id" *ngFor="let specie of speciesEnum">
+					{{specie.name}}
+				</option>
+			</select>
+		</td>
+		<td>
+			<select formControlName="ownerId">
+				<option [value]="owner.id" *ngFor="let owner of owners$">
+					{{owner.name}}
+				</option>
+			</select>
+		</td>
+		<td>{{getOwnerData(pet.ownerId, 'phone')}}</td>
+		<td>&nbsp;</td>
+		<td>
+			<button (click)="updatePet(pet.id)" [disabled]="!form.valid"  class="form__button"><i class="icon-checkmark"></i></button>
+		</td>
+			<td>
+				<button (click)="idEdit = 0" class="form__button"><i class="icon-cross"></i></button>
+			</td>
+	</ng-container>
+</ng-template>
+
+<ng-template #displayTable let-pet>
+	<td>{{pet.name}}</td>
+	<td>{{pet.nickName}}</td>
+	<td>{{pet.breed}}</td>
+	<td>{{pet.species}}</td>
+	<td>{{getOwnerData(pet.ownerId, 'name')}}</td>
+	<td>{{getOwnerData(pet.ownerId, 'phone')}}</td>
+	<td><button class="form__button"><i class="icon-enlarge2"></i></button></td>
+	<td><button (click)="editPet(pet.id)" class="form__button"><i class="icon-pencil"></i></button></td>
+	<td><button (click)="deletePet(pet.id)" class="form__button"><i class="icon-bin"></i></button></td>
+</ng-template>

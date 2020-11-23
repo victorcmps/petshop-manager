@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { PetsComponent } from './pages/pets/pets.component';
 import { LoginComponent } from './pages/login/login.component';
+import { OwnersComponent } from './pages/owners/owners.component';
 
 
 const routes: Routes = [
@@ -11,10 +12,24 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'pets',
-    component: PetsComponent,
-    canActivate: [AuthGuard]
-  }
+    path: 'dashboard',
+    children: [
+      {
+        path: 'pets',
+        component: PetsComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'donos',
+        component: OwnersComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: '',
+        redirectTo: 'pets',
+        pathMatch: 'full'
+      }]
+  },
 ];
 
 @NgModule({
