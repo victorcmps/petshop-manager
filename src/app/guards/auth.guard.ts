@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private auth: AuthService) { }
   
   canActivate(): Observable<boolean> {
     return this.checkLogin();
@@ -15,6 +16,7 @@ export class AuthGuard implements CanActivate {
   checkLogin(): Observable<boolean> {
     const user = localStorage.getItem('token');
     if (user) {
+      this.auth.loginStatus(true);
       return of(true);
     } else {
       this.router.navigate(['']);
