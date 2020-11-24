@@ -11,7 +11,6 @@
 
 .modal {
 	width: 600px;
-	height: 280px;
 	z-index: 2;
 	background: white;
 	position: fixed;
@@ -21,6 +20,12 @@
 	left: 0;
 	right: 0;
 	border-radius: 5px;
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 15px;
+		text-align: center;
+	}
 
 	&__owner-details {
 
@@ -37,11 +42,6 @@
 		&--name {
 			color: #11bd6a;
 		}
-
-		h2 {
-			margin-top: 0;
-			margin-bottom: 15px;
-		}
 		p {
 			margin-top: 0;
 		}
@@ -55,5 +55,11 @@
 		background: #11bd6a;
 		color: white;
 		width: 100%;
+	}
+
+	.table-pets {
+		width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
 	}
 }
