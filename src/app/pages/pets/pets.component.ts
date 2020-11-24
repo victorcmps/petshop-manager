@@ -21,6 +21,7 @@ import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 export class PetsComponent implements OnInit {
   pets$ = new Subject<Pet[]>();
   owners$: Array<Owner>;
+  enableAddRegistry: boolean;
   idEdit: number;
   enableEdit: boolean;
   form: FormGroup;
@@ -36,7 +37,7 @@ export class PetsComponent implements OnInit {
     private _snackBar: MatSnackBar,
     public dialog: MatDialog) {
     this.form = new FormGroup({
-      id: new FormControl('', [Validators.required]),
+      id: new FormControl(''),
       createdAt: new FormControl(''),
       name: new FormControl('', [Validators.required]),
       nickName: new FormControl('', [Validators.required]),
@@ -55,6 +56,22 @@ export class PetsComponent implements OnInit {
       this.owners$ = owners;
     });
   }
+
+  addPet() {
+    this.enableAddRegistry = true;
+    document.documentElement.scrollTop = 0;
+  }
+
+  createPet() {
+    this.pets.createPet(this.form.value).subscribe(owner => {
+      this._snackBar.open('Pet criado!', 'X', {
+        duration: 4000,
+      });
+      this.enableAddRegistry = false;
+      this.ngOnInit();
+    });
+  }
+
 
   editPet(id: number): void {
     this.pets.getPet(id).subscribe(pet => {

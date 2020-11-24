@@ -21,6 +21,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { PetsDetailsComponent } from './pages/pets-details/pets-details.component';
 import { ClickOutsideDirective } from '../app/directives/click.outside.directive';
 import { RouterModule } from '@angular/router';
+import { OwnersDetailsComponent } from './pages/owners-details/owners-details.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { RouterModule } from '@angular/router';
     OwnersComponent,
     DialogComponent,
     PetsDetailsComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    OwnersDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { RouterModule } from '@angular/router';
     MatSnackBarModule,
     MatDialogModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   providers: [
     { provide: "API_DOMAIN", useValue: environment.apiEndpointPath },

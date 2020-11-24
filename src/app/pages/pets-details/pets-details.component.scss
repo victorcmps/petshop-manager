@@ -33,6 +33,11 @@
 
 	&__title {
 		text-align: center;
+
+		&--name {
+			color: #11bd6a;
+		}
+		
 		h2 {
 			margin-top: 0;
 			margin-bottom: 15px;
