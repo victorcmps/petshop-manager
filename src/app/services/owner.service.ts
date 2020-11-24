@@ -5,12 +5,16 @@ import Owner from '../models/owner';
 @Injectable({
   providedIn: 'root'
 })
-export class OwnerService {
+export class OwnersService {
 
   constructor(private http: HttpClient) { }
 
-  getOwners() {
+  getAllOwners() {
     return this.http.get<Owner[]>(`/owner`);
+  }
+
+  getOwner(id) {
+    return this.http.get<Owner>(`/owner/${id}`);
   }
 }
 
