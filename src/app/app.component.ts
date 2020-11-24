@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { LoadingService } from '../app/services/loading.service'
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent {
 
   loading$: Observable<boolean>; 
 
-  constructor(private loading: LoadingService) {}
+  constructor(private loading: LoadingService, private auth: AuthService) {}
 
   ngOnInit() {
     this.loading.loading$.subscribe(loading => {
