@@ -2,7 +2,7 @@
 
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 8.3.21.
 
-Para fazer login, basta utilizar o e-mail nairan.asilva@gmail.com. Não é necessário preencher o campo senha.
+Para fazer login, basta utilizar o e-mail nairan.silva@totvs.com.br. Não é necessário preencher o campo senha.
 
 ## Dependências
 
