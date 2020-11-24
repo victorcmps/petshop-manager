@@ -4,6 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { PetsComponent } from './pages/pets/pets.component';
 import { LoginComponent } from './pages/login/login.component';
 import { OwnersComponent } from './pages/owners/owners.component';
+import { PetsDetailsComponent } from './pages/pets-details/pets-details.component';
 
 
 const routes: Routes = [
@@ -12,26 +13,20 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'dashboard',
-    children: [
-      {
-        path: 'pets',
-        component: PetsComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'donos',
-        component: OwnersComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: '',
-        redirectTo: 'pets',
-        pathMatch: 'full'
-      }]
+    path: 'pets',
+    component: PetsComponent,
+    canActivate: [AuthGuard]
   },
-];
-
+  {
+    path: 'donos',
+    component: OwnersComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "detalhes/:id",
+    component: PetsDetailsComponent,
+    outlet: "modal",
+  }];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
