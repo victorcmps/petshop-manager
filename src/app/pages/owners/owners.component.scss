@@ -22,6 +22,14 @@ $first-color: #11bd6a;
 	&__button:hover {
 		background: darken($first-color, 15%);
 	}
+
+	input:focus {
+		outline: 0;
+	}
+
+	input.ng-dirty.ng-invalid.ng-touched {
+    border: 1px solid #e24e4e !important;
+	}
 }
 
 table {
@@ -67,4 +75,7 @@ table {
 		background: $first-color;
 		color: white;
 	}
+.error {
+	background: red;
+}
 }

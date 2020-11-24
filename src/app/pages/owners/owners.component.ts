@@ -33,12 +33,16 @@ export class OwnersComponent implements OnInit {
   }
 
   addOwner() {
+    if (this.enableEdit) {
+      this.idEdit = 0;
+      this.enableEdit = false;
+      this.form.reset();
+    }
     this.enableAddRegistry = true;
     document.documentElement.scrollTop = 0;
   }
 
   createOwner() {
-    this.form.reset();
     this.owner.createOwner(this.form.value).subscribe(owner => {
       this._snackBar.open('Dono criado!', 'X', {
         duration: 4000,
@@ -49,6 +53,7 @@ export class OwnersComponent implements OnInit {
   }
 
   editOwner(id: number): void {
+    if (this.enableAddRegistry) this.enableAddRegistry = false;
     this.owner.getOwner(id).subscribe(owner => {
       this.form.patchValue({
         name: owner.name,

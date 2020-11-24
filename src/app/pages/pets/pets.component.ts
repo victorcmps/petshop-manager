@@ -58,6 +58,11 @@ export class PetsComponent implements OnInit {
   }
 
   addPet() {
+    if (this.enableEdit) {
+      this.idEdit = 0;
+      this.enableEdit = false;
+      this.form.reset();
+    }
     this.enableAddRegistry = true;
     document.documentElement.scrollTop = 0;
   }
@@ -74,6 +79,8 @@ export class PetsComponent implements OnInit {
 
 
   editPet(id: number): void {
+    if (this.enableAddRegistry) this.enableAddRegistry = false;
+    
     this.pets.getPet(id).subscribe(pet => {
       this.form.patchValue({
         id: pet.id,
