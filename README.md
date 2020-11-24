@@ -2,6 +2,8 @@
 
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 8.3.21.
 
+Para fazer login, basta utilizar o e-mail nairan.asilva@gmail.com. Não é necessário preencher o campo senha.
+
 ## Dependências
 
 Para instalar as dependências do projeto, use o comando `npm install` ou `npm i`. 
