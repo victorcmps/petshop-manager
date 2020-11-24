@@ -1,0 +1,23 @@
+<div class="backdrop"></div>
+<div class="modal" (clickOutside)="closeModal()">
+	<div class="modal__container">
+		<div class="modal__title">
+			<h2>Detalhes do dono</h2>
+			<h2 class="modal__title--name">{{owner$.name}}</h2>
+			<p>{{owner$.nickName}}</p>
+		</div>
+		<div class="modal__owner-details">
+			<div class="modal__owner-details--column">
+				<h2>E-mail</h2>
+				<p>{{owner$.email}}</p>
+			</div>
+			<div class="modal__owner-details--column">
+				<h2>Telefone</h2>
+				<p>{{owner$.phone}}</p>
+			</div>
+		</div>
+		<button id="basic" type="button" mat-raised-button (click)="closeModal()">
+			Fechar modal
+		</button>
+	</div>
+</div>

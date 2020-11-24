@@ -16,6 +16,18 @@ export class OwnersService {
   getOwner(id) {
     return this.http.get<Owner>(`/owner/${id}`);
   }
+
+  createOwner(owner) {
+    return this.http.post<Owner>(`/owner`, owner);
+  }
+
+  updateOwner(id, owner) {
+    return this.http.put<Owner>(`/owner/${id}`, owner);
+  }
+
+  deleteOwner(id) {
+    return this.http.delete<number>(`/owner/${id}`);
+  }
 }
 
 
