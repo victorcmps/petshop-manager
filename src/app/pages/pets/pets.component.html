@@ -64,7 +64,7 @@
 	<td>{{pet.species}}</td>
 	<td>{{getOwnerData(pet.ownerId, 'name')}}</td>
 	<td>{{getOwnerData(pet.ownerId, 'phone')}}</td>
-	<td><button class="form__button"><i class="icon-enlarge2"></i></button></td>
+	<td><button (click)="$event.stopPropagation()" [routerLink]="['', { outlets: { modal: ['detalhes', pet.id]} }]" class="form__button"><i class="icon-enlarge2"></i></button></td>
 	<td><button (click)="editPet(pet.id)" class="form__button"><i class="icon-pencil"></i></button></td>
 	<td><button (click)="deletePet(pet.id)" class="form__button"><i class="icon-bin"></i></button></td>
 </ng-template>

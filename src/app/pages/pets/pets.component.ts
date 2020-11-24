@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { combineLatest } from 'rxjs';
 import Owner from 'src/app/models/owner';
 import Pet from 'src/app/models/Pet';
-import { OwnerService } from 'src/app/services/owner.service';
+import { OwnersService } from 'src/app/services/owner.service';
 import { PetsService } from 'src/app/services/pets.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material';
@@ -32,7 +32,7 @@ export class PetsComponent implements OnInit {
 
   constructor(
     private pets: PetsService,
-    private owner: OwnerService,
+    private owner: OwnersService,
     private _snackBar: MatSnackBar,
     public dialog: MatDialog) {
     this.form = new FormGroup({
@@ -49,7 +49,7 @@ export class PetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    combineLatest(this.pets.getAllPets(), this.owner.getOwners()).subscribe(([pets, owners]) => {
+    combineLatest(this.pets.getAllPets(), this.owner.getAllOwners()).subscribe(([pets, owners]) => {
       this.pets$.next(pets);
       this.comboBreed = pets.map(pet => pet.breed);
       this.owners$ = owners;

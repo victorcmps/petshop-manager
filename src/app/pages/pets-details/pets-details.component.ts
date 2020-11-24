@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import Owner from 'src/app/models/owner';
-import Pet from 'src/app/models/Pet';
 import { OwnersService } from 'src/app/services/owner.service';
 import { PetsService } from 'src/app/services/pets.service';
 
