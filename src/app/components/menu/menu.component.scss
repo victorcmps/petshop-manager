@@ -1,0 +1,24 @@
+$first-color: #F6D48B;
+
+.menu {
+	width: 1024px;
+	margin: 0 auto;
+	ul {
+		list-style-type: none;
+		display: flex;
+		
+		li {
+			font-size: 20px;
+			&:not(:last-of-type) {
+				margin-right: 20px;
+  		  border-right: 1px solid #ccc;
+   			padding-right: 20px;
+			}
+		}
+
+		.active {
+			font-weight: bold;
+			color: $first-color;
+		}
+	}
+}
