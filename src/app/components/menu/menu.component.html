@@ -1,5 +1,11 @@
-<nav mat-tab-nav-bar [backgroundColor]="primary" mat-align-tabs="center">
-  <a mat-tab-link routerLink="/pets" routerLinkActive="active" [active]="activeRoute == '/pets'">Pets</a>
-  <a mat-tab-link routerLink="/donos" routerLinkActive="active" [active]="activeRoute == '/donos'">Donos</a>
-  <a mat-tab-link (click)="logout()">Sair</a>
+<nav class="petshop-menu">
+  <ul class="petshop-menu__wrapper">
+    <li class="petshop-menu__item" *ngFor="let item of menuItems" [class.petshop-menu__item--bottom]="item.logout"> 
+      <a [title]="item.label" class="petshop-menu__link" [routerLink]="item.route" routerLinkActive="active">
+        <span class="material-symbols-sharp">{{item.icon}}</span>
+        <span class="petshop-menu__label">{{item.label}}</span>
+        <span class="petshop-menu__tooltip">{{item.label}}</span>
+      </a>
+    </li>
+  </ul>
 </nav>

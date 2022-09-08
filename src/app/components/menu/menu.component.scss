@@ -1,28 +1,88 @@
-$first-color: #F6D48B;
+$menu-compressed-width: 80px;
 
-.mat-tab-nav-bar {
-	background: white;
-}
+.petshop-menu {
+	position: fixed;
+	width: $menu-compressed-width;
+	height: 100%;
+	
+	&, &__item {
+		background-color: var(--app-color-primary-dark);
+	}
 
-.menu {
-	width: 1024px;
-	margin: 0 auto;
-	ul {
-		list-style-type: none;
+	&__wrapper {
 		display: flex;
-		
-		li {
-			font-size: 20px;
-			&:not(:last-of-type) {
-				margin-right: 20px;
-  		  border-right: 1px solid #ccc;
-   			padding-right: 20px;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__item {
+		position: relative;
+
+		&--bottom {
+			position: absolute;
+			bottom: 16px;
+			width: 100%;
+		}
+	}
+
+	&__link {
+		display: block;
+		cursor: pointer;
+		transition: 0.2s all;
+		font-weight: 700;
+		padding: 12px;
+		margin: 12px;
+		border-radius: 12px;
+		text-align: center;
+		color: var(--app-color-neutral-white);
+
+		&:hover,
+		&.active {
+			background-color: var(--app-color-primary-light);
+			color: var(--app-color-primary-dark);
+		}
+
+		&:hover {
+			.petshop-menu__tooltip {
+				transform: translate($menu-compressed-width, -50%);
+				transition: 0.2s transform ease-in-out;
 			}
 		}
 
-		.active {
-			font-weight: bold;
-			color: $first-color;
+		a {
+			text-decoration: none;
+			color: inherit;
 		}
+	}
+
+	&__label {
+		display: none;
+	}
+
+	&__tooltip {
+		padding: 12px;
+		background-color: var(--app-color-primary-light);
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+		top: 0;
+		left: 0;
+		position: absolute;
+		top: 50%;
+		z-index: -1;
+		transform: translateY(-50%);
+		color: var(--app-color-neutral-white);
+	}
+
+	&--expanded {
+		width: 160px;
+		display: flex;
+		gap: 16px;
+		align-items: center;
+		padding: 16px;
+		margin: 16px;
+	}
+
+	&--expanded &__label {
+		display: block;
 	}
 }

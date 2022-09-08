@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,8 +11,10 @@ import { AuthService } from 'src/app/services/auth.service';
 export class MenuComponent implements OnInit {
   activeRoute = window.location.pathname;
 
+  @Input() menuItems: Array<Object>;
+
   constructor(private router: Router, location: Location, private auth: AuthService) { 
-    router.events.subscribe(val => {
+    router.events.subscribe(() => {
       this.activeRoute = location.path();
     });
 }
