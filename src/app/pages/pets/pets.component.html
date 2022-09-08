@@ -1,11 +1,13 @@
 <app-dialog [(open)]="isModalOpen" title="Edit Registry"></app-dialog>
-<h2 class="petshop-page-header">Pets 🐾</h2>
-<app-table [tableIgnoredColumns]="tableIgnoredColumns" [tableHeader]="tableHeader" [tableBody]="pets$ | async"
-	(editButtonClicked)="openModal()"></app-table>
+<div class="container">
+	<h2 class="petshop-page-header">Pets 🐾</h2>
+	<app-table [tableIgnoredColumns]="tableIgnoredColumns" [tableHeader]="tableHeader" [tableBody]="pets$ | async"
+		(editButtonClicked)="openModal()"></app-table>
 
-<div class="add-registry">
-	<button (click)="addPet()" class="add-registry__button" mat-icon-button
-		aria-label="Example icon button with a home icon">
-		<mat-icon>add</mat-icon>
-	</button>
+	<div class="add-registry">
+		<button (click)="addPet()" class="add-registry__button" mat-icon-button
+			aria-label="Example icon button with a home icon">
+			<mat-icon>add</mat-icon>
+		</button>
+	</div>
 </div>
