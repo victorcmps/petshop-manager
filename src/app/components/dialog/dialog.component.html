@@ -1,8 +1,8 @@
-<h2 mat-dialog-title>Confirmar ação</h2>
-<mat-dialog-content class="mat-typography">
-	Deseja confirmar a ação?
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancelar</button>
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Sim</button>
-</mat-dialog-actions>
+<div [class.petshop-dialog__active]="open" class="petshop-dialog">
+  <div class="petshop-dialog__wrapper">
+    <h2 class="petshop-dialog__title">{{title}}</h2>
+    <button aria-label="Close dialog" class="petshop-dialog__close material-symbols-sharp"
+      (click)="closeMenu()">close</button>
+    <ng-content></ng-content>
+  </div>
+</div>

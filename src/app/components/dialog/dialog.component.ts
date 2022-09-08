@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dialog',
@@ -8,9 +7,18 @@ import { MatDialogRef } from '@angular/material';
 })
 export class DialogComponent implements OnInit {
 
-  constructor( public dialogRef: MatDialogRef<DialogComponent>) { }
+  constructor() { }
+
+  @Input() open: boolean;
+  @Input() title: string;
+  @Output() openChange = new EventEmitter<boolean>();
 
   ngOnInit() {
+  }
+
+  closeMenu() {
+    this.open = false;
+    this.openChange.emit(this.open);
   }
 
 }
