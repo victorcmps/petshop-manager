@@ -14,15 +14,19 @@ import { MenuComponent } from './components/menu/menu.component'
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OwnersComponent } from './pages/owners/owners.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { PetsDetailsComponent } from './pages/pets-details/pets-details.component';
 import { ClickOutsideDirective } from '../app/directives/click.outside.directive';
 import { RouterModule } from '@angular/router';
 import { OwnersDetailsComponent } from './pages/owners-details/owners-details.component';
 import { MatIconModule } from '@angular/material/icon';
+import { TableComponent } from './components/table/table.component';
+import { ActionMenuComponent } from './components/action-menu/action-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +38,9 @@ import { MatIconModule } from '@angular/material/icon';
     DialogComponent,
     PetsDetailsComponent,
     ClickOutsideDirective,
-    OwnersDetailsComponent
+    OwnersDetailsComponent,
+    TableComponent,
+    ActionMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatDialogModule,
     MatButtonModule,
     RouterModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     { provide: "API_DOMAIN", useValue: environment.apiEndpointPath },
@@ -57,7 +64,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   entryComponents: [
     DialogComponent
- ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
