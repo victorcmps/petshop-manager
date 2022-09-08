@@ -1,18 +1,30 @@
 <div class="login">
-	<div class="login__logo"></div>
-	<div class="login__form">
-		<h1>Login</h1>
-		<form [formGroup]="loginForm" (ngSubmit)="login()">
-			<label>E-mail</label>
-			<input type="text" formControlName="email" placeholder="email@dominio.com" required>
-			<div class="login__form--error"
-				*ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
-				* O campo e-mail é obrigatório.
-			</div>
-			<label>Senha</label>
-			<input type="password" formControlName="senha" placeholder="digite sua senha">
-			<button [disabled]="!loginForm.valid" class="login__form--button" type="submit">Entrar</button>
-			<div *ngIf="errorMessage" class="login__form--error">{{errorMessage}}</div>
-		</form>
+	<!-- 
+		<lottie-player src="../../../assets/lottie/cat-login.json"  background="transparent"  speed="1"  style="width: 100%; height: 100%;"  loop autoplay></lottie-player> -->
+
+	<div class="login__wrapper">
+		<div class="login__animation">
+			<lottie-player src="../../../assets/lottie/cat-login.json" background="transparent" speed="1"
+				style="width: 100%; height: 900px" loop autoplay></lottie-player>
+		</div>
+
+		<div class="login__form">
+			<h1 class="login__title">Hey, Welcome back! 👋</h1>
+			<form [formGroup]="loginForm" (ngSubmit)="login()">
+				<label class="login__label" for="email">E-mail</label>
+				<input class="login__input" id="email" type="text" formControlName="email" placeholder="E-mail"
+					required>
+				<label class="login__label" for="password">Password</label>
+				<input class="login__input" id="password" type="password" formControlName="senha"
+					placeholder="Password">
+				<div class="login__form--error"
+					*ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+					E-mail field is required.
+					<div *ngIf="errorMessage">{{errorMessage}}</div>
+				</div>
+				<button [disabled]="!loginForm.valid" class="login__button" type="submit">Login</button>
+
+			</form>
+		</div>
 	</div>
 </div>
