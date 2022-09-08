@@ -19,9 +19,8 @@ export class AuthService {
     if (user) {
       localStorage.setItem('token', user.email);
       return true;
-    } else { 
-      return false;
     }
+    return false;
   }
 
   logout(): void {

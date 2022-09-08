@@ -8,7 +8,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private router: Router, private auth: AuthService) { }
-  
+
   canActivate(): Observable<boolean> {
     return this.checkLogin();
   }
@@ -18,9 +18,8 @@ export class AuthGuard implements CanActivate {
     if (user) {
       this.auth.loginStatus(true);
       return of(true);
-    } else {
-      this.router.navigate(['']);
-      return of(false);
     }
+    this.router.navigate(['']);
+    return of(false);
   }
 }
