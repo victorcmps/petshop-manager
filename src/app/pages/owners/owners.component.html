@@ -1,72 +1,11 @@
-<body class="container">
-	<h1>Donos</h1>
-	<table class="form">
-		<thead>
-			<th>Nome</th>
-			<th>E-mail</th>
-			<th>Telefone</th>
-			<th>&nbsp;</th>
-			<th>&nbsp;</th>
-			<th>&nbsp;</th>
-		</thead>
-		<tbody>
-			<ng-container *ngIf="enableAddRegistry">
-				<ng-container *ngTemplateOutlet="addRegistry">
-				</ng-container>
-			</ng-container>
-			<tr *ngFor="let owner of owners$ | async">
-				<ng-container *ngTemplateOutlet="idEdit === owner.id ? edit : displayTable; context: {$implicit: owner}">
-				</ng-container>
-			</tr>
-		</tbody>
-	</table>
-</body>
-
-<ng-template #edit let-owner>
-	<ng-container [formGroup]="form">
-		<td><input type="text" formControlName="name"></td>
-		<td><input type="text" formControlName="email"></td>
-		<td><input type="text" formControlName="phone"></td>
-		<td>&nbsp;</td>
-		<td>
-			<button (click)="updateOwner(owner.id)" [disabled]="!form.valid" class="form__button"><i
-					class="icon-checkmark"></i></button>
-		</td>
-		<td>
-			<button (click)="idEdit = 0" class="form__button"><i class="icon-cross"></i></button>
-		</td>
-	</ng-container>
-</ng-template>
-
-<ng-template #displayTable let-owner>
-	<td>{{owner.name}}</td>
-	<td>{{owner.email}}</td>
-	<td>{{owner.phone}}</td>
-	<td><button (click)="$event.stopPropagation()"
-			[routerLink]="['', { outlets: { modal: ['detalhes', 'donos', owner.id]} }]" class="form__button"><i
-				class="icon-enlarge2"></i></button></td>
-	<td><button (click)="editOwner(owner.id)" class="form__button"><i class="icon-pencil"></i></button></td>
-	<td><button (click)="deleteOwner(owner.id)" class="form__button"><i class="icon-bin"></i></button></td>
-</ng-template>
-
-<ng-template #addRegistry>
-	<tr [formGroup]="form">
-		<td><input type="text" formControlName="name"></td>
-		<td><input type="text" formControlName="email"></td>
-		<td><input type="text" formControlName="phone"></td>
-		<td>&nbsp;</td>
-		<td>
-			<button (click)="createOwner(owner.id)" [disabled]="!form.valid" class="form__button"><i
-					class="icon-checkmark"></i></button>
-		</td>
-		<td>
-			<button (click)="enableAddRegistry = false;" class="form__button"><i class="icon-cross"></i></button>
-		</td>
-	</tr>
-</ng-template>
+<app-dialog [(open)]="isModalOpen" title="Edit Registry"></app-dialog>
+<h2 class="petshop-page-header">Owners 🧔🏽👩🏽‍🦱</h2>
+<app-table [tableIgnoredColumns]="tableIgnoredColumns" [tableHeader]="tableHeader" [tableBody]="owners$ | async"
+	(editButtonClicked)="openModal()"></app-table>
 
 <div class="add-registry">
-	<button (click)="addOwner()" class="add-registry__button" mat-icon-button aria-label="Example icon button with a home icon">
+	<button (click)="addPet()" class="add-registry__button" mat-icon-button
+		aria-label="Example icon button with a home icon">
 		<mat-icon>add</mat-icon>
 	</button>
 </div>

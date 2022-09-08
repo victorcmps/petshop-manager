@@ -16,8 +16,6 @@ import { DialogComponent } from 'src/app/components/dialog/dialog.component';
   styleUrls: ['./pets.component.scss']
 })
 
-
-
 export class PetsComponent implements OnInit {
   pets$ = new Subject<Pet[]>();
   owners$: Array<Owner>;
@@ -30,6 +28,10 @@ export class PetsComponent implements OnInit {
     { id: 2, name: 'Gato' }
   ];
   comboBreed: (string | number)[];
+  isModalOpen: boolean;
+
+  tableHeader = ['Breed', 'Name', 'Owner Name', 'Especies'];
+  tableIgnoredColumns = ['createdAt', 'id', 'size', 'ownerId', 'birthday', 'nickName'];
 
   constructor(
     private pets: PetsService,
@@ -80,7 +82,7 @@ export class PetsComponent implements OnInit {
 
   editPet(id: number): void {
     if (this.enableAddRegistry) this.enableAddRegistry = false;
-    
+
     this.pets.getPet(id).subscribe(pet => {
       this.form.patchValue({
         id: pet.id,
@@ -112,7 +114,7 @@ export class PetsComponent implements OnInit {
         });
       }
     });
-  } 
+  }
 
   deletePet(id) {
     const dialogRef = this.dialog.open(DialogComponent);
@@ -129,13 +131,8 @@ export class PetsComponent implements OnInit {
     });
   }
 
-  getOwnerData(id, data): string {
-    const owner = this.owners$.find(owner => owner.id === id);
-    if (owner) {
-      return owner[data];
-    } else {
-      return '';
-    }
+  openModal() {
+    this.isModalOpen = true;
   }
 
 }

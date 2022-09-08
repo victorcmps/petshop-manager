@@ -26,6 +26,9 @@ export class OwnersComponent implements OnInit {
   form: FormGroup;
   owners$ = new Subject<Owner[]>();
 
+  tableHeader = ['Address', 'E-mail', 'Name', 'Phone'];
+  tableIgnoredColumns = ['id', 'birthday'];
+
   ngOnInit() {
     this.owner.getAllOwners().subscribe(owners => {
       this.owners$.next(owners);

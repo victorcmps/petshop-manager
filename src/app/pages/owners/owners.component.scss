@@ -1,72 +1,11 @@
 $first-color: #11bd6a;
 
-.container {
-	max-width: 1024px;
-	min-width: 480px;
-	margin: 0 auto;
-	
-	h1 {
-		margin-bottom: 0;
-	}
+.petshop-page-header {
+	font-size: 36px;
+	font-weight: 900;
+	padding: 24px 0;
 }
 
-.form {
-	&__button {
-		background: $first-color;
-		border: 0;
-		padding: 7px;
-		border-radius: 5px;
-		color: white;
-		cursor: pointer;
-	}
-	&__button:hover {
-		background: darken($first-color, 15%);
-	}
-
-	input:focus {
-		outline: 0;
-	}
-
-	input.ng-dirty.ng-invalid.ng-touched {
-    border: 1px solid #e24e4e !important;
-	}
-}
-
-table {
-	text-align: center;
-	width: 100%;
-	border-radius: 5px;
-	margin: 0 auto;
-	line-height: 40px;
-	border-collapse: separate;
-	border-spacing: 0px 1rem;
-	
-	tr {
-		box-shadow: 0 4px 20px 0 rgba(0,0,0,.05);
-	}
-	
-	tr td {
-		
-		input, select {
-			width: 100px;
-			border-radius: 5px;
-			border: 1px solid #ccc;
-			padding: 8px 5px;
-		}
-		
-		background: white;
-		padding: 10px;
-		
-		&:first-child {
-			border-top-left-radius: 5px;
-			border-bottom-left-radius: 5px;
-		}
-		&:last-child {
-			border-top-right-radius: 5px;
-			border-bottom-right-radius: 5px;
-		}
-	}
-}
 .add-registry {
 	position: fixed;
 	bottom: 20px;
@@ -75,7 +14,4 @@ table {
 		background: $first-color;
 		color: white;
 	}
-.error {
-	background: red;
-}
 }
