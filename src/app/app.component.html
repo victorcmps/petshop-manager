@@ -1,6 +1,4 @@
 <router-outlet name="modal"></router-outlet>
 <app-loading *ngIf="loading$ | async"></app-loading>
 <app-menu *ngIf="auth.logged$ | async" [menuItems]="menuItems"></app-menu>
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+<router-outlet></router-outlet>

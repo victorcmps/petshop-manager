@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, AfterContentChecked {
   {
     icon: 'person',
     label: 'Owners',
-    route: '/donos',
+    route: '/owners',
   },
   {
     icon: 'logout',
