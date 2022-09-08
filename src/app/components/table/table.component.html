@@ -1,0 +1,16 @@
+<table class="petshop-table">
+    <thead class="petshop-table__header">
+        <th class="petshop-table__item" *ngFor="let title of tableHeader">{{title}}</th>
+        <th class="petshop-table__item" colspan="2">Actions</th>
+    </thead>
+    <tbody>
+        <tr class="petshop-table__row" *ngFor="let item of tableBody; let i = index">
+            <ng-container *ngFor="let el of item | keyvalue">
+               <td *ngIf="!tableIgnoredColumns.includes(el.key)">{{el.value}}</td>
+            </ng-container>
+            <td>
+                <app-action-menu [options]="tableActionOptions" [index]="item.id"></app-action-menu>
+            </td>
+          </tr>
+    </tbody>
+</table>

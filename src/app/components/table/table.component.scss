@@ -1,0 +1,74 @@
+$first-color: #11bd6a;
+
+.petshop-table {
+	overflow: auto;
+	height: 100px;
+	text-align: center;
+	width: 100%;
+	border-radius: 12px;
+	margin: 0 auto;
+	line-height: 40px;
+	background-color: var(--app-color-neutral-white);
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+	&__header th,
+	&__row td {
+		padding: 12px;
+	}
+
+	&__header {
+		th {
+			font-weight: 700;
+			position: sticky;
+			top: 0;
+			background-color: var(--app-color-primary-dark);
+			color: var(--app-color-neutral-white);
+			z-index: 1;
+
+			&:first-child {
+				border-top-left-radius: 12px;
+			}
+
+			&:last-child {
+				border-top-right-radius: 12px;
+			}
+		}
+	}
+
+	&__row {
+		&:nth-child(even) {
+			background-color: #F4F4F4;
+		}
+
+		td {
+			position: relative;
+		}
+	}
+
+	&__button {
+		background: $first-color;
+		border: 0;
+		padding: 7px;
+		border-radius: 5px;
+		color: white;
+		cursor: pointer;
+	}
+
+	&__button:hover {
+		background: darken($first-color, 15%);
+	}
+
+	input.ng-dirty.ng-invalid {
+		border: 1px solid #e24e4e !important;
+	}
+}
+
+.container {
+	max-width: 1024px;
+	min-width: 480px;
+	margin: 0 auto;
+
+	h1 {
+		margin-bottom: 0;
+	}
+}
